@@ -42,11 +42,9 @@ gpgcheck=1
 gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
 EOF"
 
-# wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
-# dnf5 install -y ./vivaldi-stable.x86_64.rpm
-# rm -f ./vivaldi-stable.x86_64.rpm
-
-dnf5 install --nogpgcheck -y vivaldi-stable
+wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
+dnf5 install --nogpgcheck -y ./vivaldi-stable.x86_64.rpm
+rm -f ./vivaldi-stable.x86_64.rpm
 
 #### Example for enabling a System Unit File
 

@@ -21,10 +21,17 @@ dnf5 autoremove -y
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-# Install Proton Mail
-wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
-dnf5 --nogpgcheck install -y ./vivaldi-stable.x86_64.rpm
-rm -f vivaldi-stable.x86_64.rpm
+# Install Vivaldi
+sh -c "cat > /etc/yum.repos.d/vivaldi.repo <<'EOF'
+[vivaldi]
+name=vivaldi
+baseurl=https://repo.vivaldi.com/archive/rpm/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
+EOF"
+dnf5 update -y
+dnf5 install -y vivaldi-stable
 
 #### Example for enabling a System Unit File
 

@@ -34,7 +34,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm \
-    dnf -y --nogpgcheck install ./vivaldi-stable.x86_64.rpm \
+    dnf5 -y install --nogpgcheck ./vivaldi-stable.x86_64.rpm \
     rm -f ./vivaldi-stable.x86_64.rpm \
     /ctx/build.sh
     

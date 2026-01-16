@@ -22,9 +22,9 @@ dnf5 autoremove -y
 # dnf5 -y copr disable ublue-os/staging
 
 # Install Proton Mail
-wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
-dnf5 install -y ./ProtonMail-desktop-beta.rpm
-rm -f ProtonMail-desktop-beta.rpm
+wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
+dnf5 --nogpgcheck install -y ./vivaldi-stable.x86_64.rpm
+rm -f vivaldi-stable.x86_64.rpm
 
 #### Example for enabling a System Unit File
 

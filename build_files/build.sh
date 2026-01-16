@@ -34,7 +34,7 @@ EOF"
 dnf5 install -y librewolf
 
 wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
-dnf5 install --nogpgcheck -y ./vivaldi-stable.x86_64.rpm
+dnf5 install --nogpgcheck ./vivaldi-stable.x86_64.rpm
 rm -f ./vivaldi-stable.x86_64.rpm
 
 #### Example for enabling a System Unit File

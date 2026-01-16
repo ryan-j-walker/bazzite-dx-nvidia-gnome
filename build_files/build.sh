@@ -11,7 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y solaar
-dnf5 remove -y ffmpeg fish Sunshine waydroid
+dnf5 remove -y ffmpeg fish gamescope Sunshine waydroid
 dnf5 autoremove -y
 
 # Use a COPR Example:

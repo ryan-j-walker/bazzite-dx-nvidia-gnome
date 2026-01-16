@@ -42,7 +42,7 @@ gpgcheck=1
 gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
 EOF"
 
-dnf5 install -y vivaldi
+dnf5 install -y vivaldi-stable
 
 #### Example for enabling a System Unit File
 

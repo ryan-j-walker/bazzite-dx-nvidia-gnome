@@ -33,8 +33,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    dnf5 remove -y gamescope \
-    dnf5 update -y && dnf5 install -y librewolf vivaldi-stable \
     /ctx/build.sh
     
 ### LINTING

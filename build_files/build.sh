@@ -10,8 +10,8 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y solaar wine-mono
-dnf5 remove -y ffmpeg fish gamescope Sunshine waydroid
+dnf5 install -y solaar librewolf vivaldi-stable wine-mono
+dnf5 remove -y ffmpeg fish Sunshine waydroid
 dnf5 autoremove -y
 
 # Use a COPR Example:

@@ -33,16 +33,9 @@ EOF"
 # dnf5 update -y
 dnf5 install -y librewolf
 
-sh -c "cat > /etc/yum.repos.d/vivaldi.repo <<'EOF'
-[vivaldi]
-name=vivaldi
-baseurl=https://repo.vivaldi.com/archive/rpm/x86_64
-enabled=1
-gpgcheck=1
-gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
-EOF"
-
-dnf5 install -y vivaldi-stable
+wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm
+dnf5 install -y ./vivaldi-stable.x86_64.rpm
+rm -f ./vivaldi-stable.x86_64.rpm
 
 #### Example for enabling a System Unit File
 

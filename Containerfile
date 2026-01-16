@@ -23,7 +23,7 @@ FROM ghcr.io/ublue-os/bazzite-dx-nvidia-gnome:latest
 ## Uncomment the following line if one desires to make /opt immutable and be able to be used
 ## by the package manager.
 
-# RUN rm /opt && mkdir /opt
+# RUN rm /opt && mkdir /opt/etc/dconf/db/gdm.d/01-desktop-interface
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
@@ -33,6 +33,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
+    dnf5 remove -y gamescope \
     dnf5 update -y && dnf5 install -y librewolf vivaldi-stable \
     /ctx/build.sh
     

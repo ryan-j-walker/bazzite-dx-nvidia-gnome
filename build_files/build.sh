@@ -58,3 +58,5 @@ tar -xf "/tmp/fonts/${FONT}.tar.xz" -C "${DEST}/${FONT}"
 rm -rf /tmp/fonts
 
 fc-cache --system-only --really-force "${DEST}"
+
+dconf update

@@ -22,16 +22,16 @@ dnf5 autoremove -y
 # dnf5 -y copr disable ublue-os/staging
 
 # Install Vivaldi
-sh -c "cat > /etc/yum.repos.d/vivaldi.repo <<'EOF'
-[vivaldi]
-name=vivaldi
-baseurl=https://repo.vivaldi.com/archive/rpm/x86_64
-enabled=1
+sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF'
+[repository]
+name=LibreWolf Software Repository
+baseurl=https://repo.librewolf.net
 gpgcheck=1
-gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
+repo_gpgcheck=1
+gpgkey=https://repo.librewolf.net/pubkey.gpg
 EOF"
 dnf5 update -y
-dnf5 install -y vivaldi-stable
+dnf5 install -y librewolf
 
 #### Example for enabling a System Unit File
 

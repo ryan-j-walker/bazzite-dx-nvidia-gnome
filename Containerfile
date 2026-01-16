@@ -40,7 +40,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     gpgcheck=1
     repo_gpgcheck=1
     gpgkey=https://repo.librewolf.net/pubkey.gpg
-    EOF"
+    EOF" \
     dnf5 install -y librewolf \
     wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm \
     dnf5 install -y --nogpgcheck ./vivaldi-stable.x86_64.rpm \

@@ -31,7 +31,7 @@ repo_gpgcheck=1
 gpgkey=https://repo.librewolf.net/pubkey.gpg
 EOF"
 # dnf5 update -y
-dnf5 -install -y librewolf
+dnf5 install -y librewolf
 
 #### Example for enabling a System Unit File
 

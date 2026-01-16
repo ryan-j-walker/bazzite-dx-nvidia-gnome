@@ -33,6 +33,17 @@ EOF"
 # dnf5 update -y
 dnf5 install -y librewolf
 
+sh -c "cat > /etc/yum.repos.d/vivaldi.repo <<'EOF'
+[vivaldi]
+name=vivaldi
+baseurl=https://repo.vivaldi.com/archive/rpm/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
+EOF"
+
+dnf5 install -y vivaldi
+
 #### Example for enabling a System Unit File
 
 # systemctl enable podman.socket

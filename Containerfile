@@ -33,8 +33,17 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
+    sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF' \
+    [repository] \
+    name=LibreWolf Software Repository \
+    baseurl=https://repo.librewolf.net \
+    gpgcheck=1 \
+    repo_gpgcheck=1 \
+    gpgkey=https://repo.librewolf.net/pubkey.gpg \
+    EOF" \
+    dnf5 install -y librewolf \
     wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm \
-    dnf5 -y install --nogpgcheck ./vivaldi-stable.x86_64.rpm \
+    dnf5 install -y --nogpgcheck ./vivaldi-stable.x86_64.rpm \
     rm -f ./vivaldi-stable.x86_64.rpm \
     /ctx/build.sh
     

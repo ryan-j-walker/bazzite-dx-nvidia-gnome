@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y solaar librewolf vivaldi-stable wine-mono
+dnf5 install -y solaar wine-mono
 dnf5 remove -y ffmpeg fish Sunshine waydroid
 dnf5 autoremove -y
 
@@ -22,15 +22,15 @@ dnf5 autoremove -y
 # dnf5 -y copr disable ublue-os/staging
 
 # Install Librewolf
-# sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF'
-# [repository]
-# name=LibreWolf Software Repository
-# baseurl=https://repo.librewolf.net
-# gpgcheck=1
-# repo_gpgcheck=1
-# gpgkey=https://repo.librewolf.net/pubkey.gpg
-# EOF"
-# dnf5 install -y librewolf
+sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF'
+[repository]
+name=LibreWolf Software Repository
+baseurl=https://repo.librewolf.net
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://repo.librewolf.net/pubkey.gpg
+EOF"
+dnf5 install -y librewolf
 
 #### Example for enabling a System Unit File
 

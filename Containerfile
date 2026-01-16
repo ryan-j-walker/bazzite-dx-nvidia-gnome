@@ -1,14 +1,6 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-COPY <<EOF > /etc/yum.repos.d/librewolf.repo
-echo "[repository]"
-echo "name=LibreWolf Software Repository"
-echo "baseurl=https://repo.librewolf.net"
-echo "gpgcheck=1"
-echo "repo_gpgcheck=1"
-echo "gpgkey=https://repo.librewolf.net/pubkey.gpg"
-EOF
 
 # Base Image
 FROM ghcr.io/ublue-os/bazzite-dx-nvidia-gnome:latest
@@ -41,10 +33,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    dnf5 install -y librewolf \
-    wget https://vivaldi.com/download/vivaldi-stable.x86_64.rpm \
-    dnf5 install -y --nogpgcheck ./vivaldi-stable.x86_64.rpm \
-    rm -f ./vivaldi-stable.x86_64.rpm \
+    dnf5 install -y librewolf vivaldi-stable \
     /ctx/build.sh
     
 ### LINTING

@@ -9,8 +9,6 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-ls -la
-
 # this installs a package from fedora repos
 dnf5 install -y solaar wine-mono
 dnf5 remove -y ffmpeg fish Sunshine waydroid
@@ -37,6 +35,12 @@ dnf5 install -y librewolf
 #### Example for enabling a System Unit File
 
 # systemctl enable podman.socket
+
+# Set 24h GDM clock
+sh -c "cat > /etc/dconf/db/gdm.d/01-desktop-interface <<'EOF'
+[org/gnome/desktop/interface]
+clock-format='24h'
+EOF"
 
 # Remove Steam from autostart
 rm -f /etc/xdg/autostart/steam.desktop

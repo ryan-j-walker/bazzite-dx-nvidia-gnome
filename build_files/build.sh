@@ -43,6 +43,9 @@ EOF"
 # Remove Steam from autostart
 rm -f /etc/xdg/autostart/steam.desktop
 
+# Remove desktop entries
+rm -f /usr/share/applications/waydroid-container-restart.desktop
+
 # Download Nerd Font
 URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
 FONT="FiraCode"

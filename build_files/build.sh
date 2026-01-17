@@ -37,10 +37,10 @@ dnf5 install -y librewolf
 # systemctl enable podman.socket
 
 # Set 24h GDM clock
-sh -c "cat > /etc/dconf/db/gdm.d/01-desktop-interface <<'EOF'
-[org/gnome/desktop/interface]
-clock-format='24h'
-EOF"
+# sh -c "cat > /etc/dconf/db/gdm.d/01-desktop-interface <<'EOF'
+# [org/gnome/desktop/interface]
+# clock-format='24h'
+# EOF"
 
 # Remove Steam from autostart
 rm -f /etc/xdg/autostart/steam.desktop
@@ -64,5 +64,3 @@ tar -xf "/tmp/fonts/${FONT}.tar.xz" -C "${DEST}/${FONT}"
 rm -rf /tmp/fonts
 
 fc-cache --system-only --really-force "${DEST}"
-
-dconf update

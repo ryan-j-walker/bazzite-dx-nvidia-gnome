@@ -33,6 +33,7 @@ dnf5 autoremove -y
 #### Example for enabling a System Unit File
 
 # systemctl enable podman.socket
+systemctl enable brew-setup.service
 
 # Set 24h GDM clock
 sh -c "cat > /etc/dconf/db/gdm.d/01-desktop-interface <<'EOF'

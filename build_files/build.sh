@@ -21,7 +21,12 @@ EOF"
 # this installs a package from fedora repos
 dnf5 install -y librewolf solaar wine-mono
 dnf5 remove -y ffmpeg fish Sunshine waydroid
+
+wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
+dnf5 install -y ./ProtonMail-desktop-beta.rpm
+rm -f ./ProtonMail-desktop-beta.rpm
 dnf5 autoremove -y
+
 
 # Use a COPR Example:
 #

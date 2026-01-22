@@ -9,20 +9,23 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF'
-[repository]
-name=LibreWolf Software Repository
-baseurl=https://repo.librewolf.net
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://repo.librewolf.net/pubkey.gpg
-EOF"
+# sh -c "cat > /etc/yum.repos.d/librewolf.repo <<'EOF'
+# [repository]
+# name=LibreWolf Software Repository
+# baseurl=https://repo.librewolf.net
+# gpgcheck=1
+# repo_gpgcheck=1
+# gpgkey=https://repo.librewolf.net/pubkey.gpg
+# EOF"
 
 # this installs a package from fedora repos
-dnf5 install -y librewolf solaar wine-mono
+dnf5 install -y solaar wine-mono
 dnf5 remove -y ffmpeg fish Sunshine waydroid
 dnf5 autoremove -y
 
+wget https://downloads.vivaldi.com/stable/vivaldi-stable.x86_64.rpm
+dnf5 --nogpgcheck -y install ./vivaldi-stable.x86_64.rpm
+rm -f vivaldi-stable.x86_64.rpm
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging

@@ -12,6 +12,9 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y solaar wine-mono
 dnf5 remove -y epiphany ffmpeg fish Sunshine waydroid
+wget https://proton.me/download/bridge/protonmail-bridge-3.21.2-1.x86_64.rpm
+dnf5 install -y ./protonmail-bridge-3.21.2-1.x86_64.rpm
+rm -f ./protonmail-bridge-3.21.2-1.x86_64.rpm
 dnf5 autoremove -y
 
 

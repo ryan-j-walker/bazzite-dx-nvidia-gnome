@@ -30,12 +30,6 @@ dnf5 autoremove -y
 # systemctl enable podman.socket
 systemctl enable brew-setup.service
 
-# Set 24h GDM clock
-sh -c "cat > /etc/dconf/db/gdm.d/01-desktop-interface <<'EOF'
-[org/gnome/desktop/interface]
-clock-format='24h'
-EOF"
-
 # Remove Steam from autostart
 rm -f /etc/xdg/autostart/steam.desktop
 

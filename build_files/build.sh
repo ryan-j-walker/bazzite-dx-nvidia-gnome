@@ -9,8 +9,18 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
+# Remove installed packages
+dnf5 remove -y code ffmpeg fish Sunshine waydroid
+
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y solaar wine-mono
+
+# Install Proton Mail
+wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
+dnf5 install -y ./ProtonMail-desktop-beta.rpm
+rm -f ./ProtonMail-desktop-beta.rpm
+
+dnf5 autoremove -y
 
 # Use a COPR Example:
 #
@@ -21,4 +31,8 @@ dnf5 install -y tmux
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+systemctl enable brew-setup.service
+
+/ctx/theming.sh
+/ctx/nerd-fonts.sh
+/ctx/cleanup.sh

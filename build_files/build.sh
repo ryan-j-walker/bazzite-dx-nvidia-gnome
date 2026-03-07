@@ -13,7 +13,7 @@ set -ouex pipefail
 dnf5 remove -y code ffmpeg fish hhd hhd-ui Sunshine waydroid
 
 # this installs a package from fedora repos
-dnf5 install -y solaar wine-mono
+dnf5 install -y solaar
 
 # Install Proton Mail
 wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm

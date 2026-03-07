@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Remove installed packages
-dnf5 remove -y code ffmpeg fish Sunshine waydroid
+dnf5 remove -y code ffmpeg fish hhd hhd-ui Sunshine waydroid
 
 # this installs a package from fedora repos
 dnf5 install -y solaar wine-mono

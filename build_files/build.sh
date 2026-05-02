@@ -20,18 +20,13 @@ wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 dnf5 install -y ./ProtonMail-desktop-beta.rpm
 rm -f ./ProtonMail-desktop-beta.rpm
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
-
 # Use a COPR Example:
-#
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-
 systemctl enable brew-setup.service
 
 /ctx/theming.sh

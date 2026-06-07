@@ -20,6 +20,11 @@ wget https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm
 dnf5 install -y ./ProtonMail-desktop-beta.rpm
 rm -f ./ProtonMail-desktop-beta.rpm
 
+# Install Proton Pass
+wget https://proton.me/download/pass/linux/ProtonPass.rpm
+dnf5 install -y ./ProtonPass.rpm
+rm -f ./ProtonPass.rpm
+
 # Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package

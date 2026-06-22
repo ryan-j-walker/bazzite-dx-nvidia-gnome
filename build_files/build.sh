@@ -2,6 +2,9 @@
 
 set -ouex pipefail
 
+# Copy the contents of system_files/ of the git repo to /
+cp -avf "/ctx/system_files"/. /
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -26,13 +29,13 @@ dnf5 install -y ./ProtonPass.rpm
 rm -f ./ProtonPass.rpm
 
 # Use a COPR Example:
+#
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-systemctl enable brew-setup.service
 
 /ctx/theming.sh
 /ctx/nerd-fonts.sh
